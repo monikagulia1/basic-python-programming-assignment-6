@@ -1,0 +1,103 @@
+1. Write a Python Program to Display Fibonacci Sequence Using Recursion?
+
+Recursion is a programming technique where a function calls itself within its own definition. It is a powerful and elegant approach used to solve problems that can be divided into smaller, similar subproblems. In recursive programming, a function breaks down a complex problem into simpler instances of the same problem until it reaches a base case that can be solved directly.
+
+When a function is called recursively, it creates a new instance of the function, called a recursive call, which has its own set of variables and executes independently. The recursive calls continue until the base case is reached, at which point the function starts returning values and unwinds the stack of recursive calls, propagating the results back to the initial call.
+
+The structure of a recursive function typically consists of two parts: the base case and the recursive case. The base case is the terminating condition that allows the recursion to stop, preventing an infinite loop. The recursive case defines how the function calls itself with simplified or modified arguments to move closer to the base case.
+
+Recursion can be a powerful technique for solving problems that exhibit self-repeating patterns or can be divided into smaller subproblems. It is commonly used in various algorithms, such as factorial calculation, Fibonacci sequence generation, tree traversals, and more.
+
+However, it's important to design recursive functions carefully to ensure that the base case is reached and the function converges. Infinite recursion can lead to stack overflow errors and cause the program to terminate abruptly.def fibonacci_sequence(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci_sequence(n-1) + fibonacci_sequence(n-2)
+
+terms = int(input("Enter the number of terms: "))
+
+if terms <= 0:
+    print("Invalid input!")
+else:
+    print("Fibonacci Sequence:")
+    for i in range(terms):
+        print(fibonacci_sequence(i))
+
+2. Write a Python Program to Find Factorial of Number Using Recursion?
+def factorial(n):
+    fact = 1
+    for i in range(1, n+1):
+        fact *= (n+1)-i
+    return fact
+
+number = int(input("Enter a number: "))
+
+if number < 0:
+    print("Factorial is not defined for negative numbers!")
+else:
+    result = factorial(number)
+    print("Factorial:", result)
+
+3. Write a Python Program to calculate your Body Mass Index?
+Certainly! Here are modified versions of the BMI calculation program to support both the metric and imperial systems:
+
+       1. Python Program to Calculate Your Body Mass Index (BMI) in the Metric System:
+```python
+def calculate_bmi_metric(weight, height):
+    bmi = weight / (height**2)
+    return bmi
+
+weight_metric = float(input("Enter your weight in kilograms: "))
+height_metric = float(input("Enter your height in meters: "))
+
+bmi_metric = calculate_bmi_metric(weight_metric, height_metric)
+print("Your BMI (Metric):", bmi_metric)
+```
+
+           2. Python Program to Calculate Your Body Mass Index (BMI) in the Imperial System:
+```python
+def calculate_bmi_imperial(weight, height):
+    bmi = (weight / (height**2)) * 703
+    return bmi
+
+weight_imperial = float(input("Enter your weight in pounds: "))
+height_imperial = float(input("Enter your height in inches: "))
+
+bmi_imperial = calculate_bmi_imperial(weight_imperial, height_imperial)
+print("Your BMI (Imperial):", bmi_imperial)
+```
+
+In the first program, the `calculate_bmi_metric()` function calculates the BMI in the metric system.
+It takes weight in kilograms and height in meters as input. The BMI is calculated by dividing the weight by the square of the height.
+
+In the second program, the `calculate_bmi_imperial()` function calculates the BMI in the imperial system. 
+It takes weight in pounds and height in inches as input. 
+The BMI is calculated by dividing the weight by the square of the height and multiplying by a conversion factor of 703.
+
+The user is prompted to enter the weight and height in the respective systems, and the program calculates and prints the BMI accordingly.
+4. Write a Python Program to calculate the natural logarithm of any number?
+import math
+
+number = float(input("Enter a number: "))
+
+if number <= 0:
+    print("Invalid input!")
+else:
+    logarithm = math.log(number)
+    print("Natural Logarithm:", logarithm)
+
+5. Write a Python Program for cube sum of first n natural numbers?
+
+def cube_sum(n):
+    sum = 0
+    for i in range(1, n+1):
+        sum += i**3
+    return sum
+
+number = int(input("Enter a number: "))
+
+if number < 0:
+    print("Invalid input!")
+else:
+    result = cube_sum(number)
+    print("Cube Sum:", result)
